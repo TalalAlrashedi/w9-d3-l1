@@ -6,16 +6,19 @@ const items: Map<string, Item> = new Map();
 
 // Create a new item and add it to the store
 const create = (data: Omit<Item, 'id' | 'createdAt' | 'updatedAt'>): Item => {
-  const id = generateId(); // Generate unique ID
-  const now = new Date();  // Current timestamp
+  // Generate unique ID
+  const id = generateId(); 
+  // Current timestamp
+  const now = new Date();  
+
   const item: Item = {
     id,
     ...data,
     createdAt: now,
     updatedAt: now,
   };
-
-  items.set(id, item); // Add item to the Map
+// Add item to the Map
+  items.set(id, item); 
   return item;
 };
 
